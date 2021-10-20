@@ -8,6 +8,10 @@ group = 'com.tatiana'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+jar {
+	archivesBaseName = 'gsl'
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
