@@ -1,6 +1,6 @@
 package com.tatiana.gsl.domain.service;
 
-import com.tatiana.gsl.api.reponse.DeliveryResponse;
+import com.tatiana.gsl.api.response.DeliveryResponse;
 import com.tatiana.gsl.domain.repository.DeliveryRepository;
 import com.tatiana.gsl.domain.repository.ProductRepository;
 import lombok.AllArgsConstructor;

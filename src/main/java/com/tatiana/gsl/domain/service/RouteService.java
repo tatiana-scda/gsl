@@ -1,0 +1,46 @@
+package com.tatiana.gsl.domain.service;
+
+import com.tatiana.gsl.api.response.RouteResponse;
+import com.tatiana.gsl.domain.model.entity.Address;
+import com.tatiana.gsl.domain.repository.AddressRepository;
+import com.tatiana.gsl.domain.repository.RouteRepository;
+import com.tatiana.gsl.domain.repository.VehicleRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+@AllArgsConstructor
+public class RouteService {
+
+    VehicleRepository vehicleRepository;
+
+    RouteRepository routeRepository;
+
+    AddressRepository addressRepository;
+
+    public RouteResponse getRoute(Integer routeId) {
+        var route = routeRepository.getById(routeId);
+        var vehicle = vehicleRepository.getById(route.getVehicleId());
+        var origin = addressRepository.getById(route.getOriginId());
+        var destination = addressRepository.getById(route.getDestinationId());
+
+        var response = new RouteResponse();
+
+        response.setRouteId(routeId);
+        response.setStatus(route.getStatus().toString());
+        response.setOrigin(constructAddress(origin));
+        response.setDestination(constructAddress(destination));
+        response.setCurrentLocation(vehicle.getCurrentLocation());
+        response.setDriver(vehicle.getDriver());
+
+        return  response;
+    }
+
+    String constructAddress(Address address) {
+        return new StringBuilder()
+                .append(address.getStreet())
+                .append(address.getNumber())
+                .append(address.getCity())
+                .toString();
+    }
+}

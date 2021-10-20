@@ -31,6 +31,6 @@ public class Vehicle {
     @Column(name = "plate")
     private String plate;
 
-    @Column(name = "location")
-    private String location;
+    @Column(name = "current_location")
+    private String currentLocation;
 }

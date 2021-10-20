@@ -1,7 +1,5 @@
-package com.tatiana.gsl.api.reponse;
+package com.tatiana.gsl.api.response;
 
-import com.tatiana.gsl.domain.enumerator.DeliveryStatus;
-import com.tatiana.gsl.domain.model.entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
