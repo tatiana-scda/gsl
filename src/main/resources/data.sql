@@ -18,9 +18,9 @@ INSERT INTO product (id, description)
     VALUES (1, 'Livro Senhor dos Aneis - Edicao Colecionador');
 
 --route
-INSERT INTO route (id, vehicle_id, origin_id, destination_id)
-    VALUES (1, 1, 1, 2);
+INSERT INTO route (id, status, vehicle_id, origin_id, destination_id)
+    VALUES (1, 'IN_PROGRESS', 1, 1, 2);
 
 --vehicle
 INSERT INTO vehicle (id, driver, plate, current_location)
-    VALUES (id, 'Pedro Martines', 'AHF6849', 'Rua Padre Anchieta, 234, Barbacena');
+    VALUES (id, 'Pedro Martines', 'AHF6849', 'Rua Padre Anchieta 234 Barbacena');
