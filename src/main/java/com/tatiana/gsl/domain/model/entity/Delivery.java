@@ -27,7 +27,7 @@ public class Delivery {
     private Integer id;
 
     @Column(name = "status")
-    private DeliveryStatus status;
+    private String status;
 
     @Column(name = "product_id")
     private Integer productId;

@@ -27,7 +27,7 @@ public class RouteService {
         var response = new RouteResponse();
 
         response.setRouteId(routeId);
-        response.setStatus(route.getStatus().toString());
+        response.setStatus(route.getStatus());
         response.setOrigin(constructAddress(origin));
         response.setDestination(constructAddress(destination));
         response.setCurrentLocation(vehicle.getCurrentLocation());
@@ -37,10 +37,8 @@ public class RouteService {
     }
 
     String constructAddress(Address address) {
-        return new StringBuilder()
-                .append(address.getStreet())
-                .append(address.getNumber())
-                .append(address.getCity())
-                .toString();
+        return address.getStreet() + " " +
+                address.getNumber() + " " +
+                address.getCity();
     }
 }

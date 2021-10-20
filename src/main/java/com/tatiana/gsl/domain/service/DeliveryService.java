@@ -21,7 +21,7 @@ public class DeliveryService {
         var response = new DeliveryResponse();
 
         response.setDeliveryId(deliveryId);
-        response.setStatus(delivery.getStatus().toString());
+        response.setStatus(delivery.getStatus());
         response.setProductDescription(product.getDescription());
 
         return  response;

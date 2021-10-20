@@ -27,7 +27,7 @@ public class Route {
     private Integer id;
 
     @Column(name = "status")
-    private RouteStatus status;
+    private String status;
 
     @Column(name = "vehicle_id")
     private Integer vehicleId;
