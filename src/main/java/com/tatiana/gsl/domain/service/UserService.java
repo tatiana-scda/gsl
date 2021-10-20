@@ -23,6 +23,8 @@ public class UserService {
         user.setUsername(request.getUsername());
         user.setName(request.getName());
         user.setPassword(securePassword(request.getPassword()));
+
+        repository.save(user);
     }
 
     public boolean loginUser(LoginRequest request) {
