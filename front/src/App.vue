@@ -2,26 +2,22 @@
   <div id="app">
     <GHeader />
     <h1
-      v-if="showTitle"
       class="route-name"
     >
       {{ $route.name }}
     </h1>
-    <router-view/>
+    <router-view
+      class="route-view"
+    />
   </div>
 </template>
 
 <script>
-import GHeader from './components/header/'
+import GHeader from '@/components/header/'
 
 export default {
   components: {
     GHeader,
-  },
-  computed: {
-    showTitle() {
-      return this.$route.path !== '/'
-    },
   },
 }
 </script>
@@ -41,5 +37,10 @@ export default {
   font-size: 30px;
   font-weight: 600;
   margin: 30px 0;
+}
+
+.route-view {
+  max-width: 850px;
+  margin: 0 auto;
 }
 </style>
