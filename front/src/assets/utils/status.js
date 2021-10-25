@@ -1,14 +1,35 @@
 const delivery = {
-  DEBT: 'Aguardando pagamento',
-  PAID: 'Pagamento feito',
-  ON_ROUTE: 'Em rota',
-  DELIVERED: 'Entregue',
+  DEBT: {
+    icon: 'time',
+    title: 'Aguardando pagamento',
+  },
+  PAID: {
+    icon: 'money',
+    title: 'Pagamento feito',
+  },
+  ON_ROUTE: {
+    icon: 'truck',
+    title: 'Em rota',
+  },
+  DELIVERED: {
+    icon: 'package',
+    title: 'Entregue',
+  },
 }
 
 const route = {
-  PROCESSING: 'Processando',
-  IN_PROGRESS: 'Em progresso',
-  DONE: 'Feito',
+  PROCESSING: {
+    icon: 'time',
+    title: 'Processando',
+  },
+  IN_PROGRESS: {
+    icon: 'truck',
+    title: 'Em progresso',
+  },
+  DONE: {
+    icon: 'package',
+    title: 'Feito',
+  },
 }
 
 const status = {
