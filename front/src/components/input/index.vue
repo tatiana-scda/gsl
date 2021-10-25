@@ -72,13 +72,12 @@ export default {
   text-align: left;
   top: 4px;
   transition: .5s all;
-  width: 60px;
   z-index: 0;
 }
 
 .input-label--big {
   font-size: 16px;
-  top: 15px;
+  top: 12px;
 }
 
 .input-label--focus {
