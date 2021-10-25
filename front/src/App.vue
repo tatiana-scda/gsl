@@ -1,12 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <GHeader />
+    <h1
+      v-if="showTitle"
+      class="route-name"
+    >
+      {{ $route.name }}
+    </h1>
     <router-view/>
   </div>
 </template>
+
+<script>
+import GHeader from './components/header/'
+
+export default {
+  components: {
+    GHeader,
+  },
+  computed: {
+    showTitle() {
+      return this.$route.path !== '/'
+    },
+  },
+}
+</script>
 
 <style>
 #app {
@@ -17,16 +35,11 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.route-name {
+  text-transform: uppercase;
+  color: var(--g-red);
+  font-size: 30px;
+  font-weight: 600;
+  margin: 30px 0;
 }
 </style>
