@@ -36,7 +36,7 @@ export default {
   color: var(--g-red);
   font-size: 30px;
   font-weight: 600;
-  margin: 30px 0;
+  margin: 30px 0 50px;
 }
 
 .route-view {
