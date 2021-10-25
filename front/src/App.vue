@@ -7,6 +7,7 @@
       {{ $route.name }}
     </h1>
     <router-view
+      :key="$route.path"
       class="route-view"
     />
   </div>
@@ -29,6 +30,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+#app * {
+  box-sizing: border-box;
 }
 
 .route-name {
