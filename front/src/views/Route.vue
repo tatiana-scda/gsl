@@ -2,10 +2,13 @@
   <div v-if="id">
     <GLoader v-if="!ready" />
     <GStatus
-      v-if="ready"
+      v-if="route"
       :infos="infos"
       :statuses="statuses"
       :status="route.status"
+    />
+    <GError
+      v-if="!route && ready"
     />
     <GButton
       v-if="ready"
@@ -30,6 +33,7 @@
 
 <script>
 import GButton from '@/components/button/'
+import GError from '@/components/error/'
 import GForm from '@/components/form/'
 import GInput from '@/components/input/'
 import GLoader from '@/components/loader/'
@@ -41,6 +45,7 @@ import status from '@/assets/utils/status'
 export default {
   components: {
     GButton,
+    GError,
     GForm,
     GInput,
     GLoader,
@@ -50,13 +55,7 @@ export default {
     return {
       qid: '',
       ready: false,
-      route: {
-        id: 0,
-        driver: '',
-        currentLocation: '',
-        origin: '',
-        destination: '',
-      },
+      route: null,
     }
   },
   computed: {
@@ -93,8 +92,13 @@ export default {
   async mounted() {
     if (!this.id) return
 
-    this.route = await api.status.route(this.id)
-    this.ready = true
+    try {
+      this.route = await api.status.route(this.id)
+    } catch (error) {
+      console.error(error)
+    } finally {
+      this.ready = true
+    }
   },
 }
 </script>

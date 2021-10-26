@@ -18,8 +18,5 @@ export default {
       return () => import(`@/assets/icons/${this.name}.svg?inline`)
     },
   },
-  mounted() {
-    console.log(this.name)
-  },
 }
 </script>

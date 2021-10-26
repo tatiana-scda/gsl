@@ -6,12 +6,10 @@
     >
       {{ $route.name }}
     </h1>
-    <transition name="route-view--slide">
-      <router-view
-        :key="$route.path"
-        class="route-view"
-      />
-    </transition>
+    <router-view
+      :key="$route.path"
+      class="route-view"
+    />
   </div>
 </template>
 
@@ -47,27 +45,7 @@ export default {
 }
 
 .route-view {
-  --transition: .5s;
   max-width: 850px;
   margin: 0 auto;
-}
-
-.route-view--slide-enter {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: all var(--transition);
-}
-
-.route-view--slide-enter-active {
-  overflow-y: hidden;
-}
-
-.route-view--slide-enter-to {
-  overflow-x: hidden;
-  transition: all var(--transition);
-}
-
-.route-view--slide-leave-active {
-  display: none;
 }
 </style>

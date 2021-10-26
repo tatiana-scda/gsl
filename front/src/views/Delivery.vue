@@ -2,10 +2,13 @@
   <div v-if="id">
     <GLoader v-if="!ready" />
     <GStatus
-      v-if="ready"
+      v-if="delivery"
       :infos="infos"
       :statuses="statuses"
       :status="delivery.status"
+    />
+    <GError
+      v-if="!delivery && ready"
     />
     <GButton
       v-if="ready"
@@ -30,6 +33,7 @@
 
 <script>
 import GButton from '@/components/button/'
+import GError from '@/components/error/'
 import GForm from '@/components/form/'
 import GInput from '@/components/input/'
 import GLoader from '@/components/loader/'
@@ -41,6 +45,7 @@ import status from '@/assets/utils/status'
 export default {
   components: {
     GButton,
+    GError,
     GForm,
     GInput,
     GLoader,
@@ -48,10 +53,7 @@ export default {
   },
   data() {
     return {
-      delivery: {
-        id: 0,
-        productDescription: '',
-      },
+      delivery: null,
       qid: '',
       ready: false,
     }
@@ -87,8 +89,13 @@ export default {
   async mounted() {
     if (!this.id) return
 
-    this.delivery = await api.status.delivery(this.id)
-    this.ready = true
+    try {
+      this.delivery = await api.status.delivery(this.id)
+    } catch (error) {
+      console.error(error)
+    } finally {
+      this.ready = true
+    }
   },
 }
 </script>
