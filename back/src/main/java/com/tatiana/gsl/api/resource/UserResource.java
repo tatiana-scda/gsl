@@ -13,12 +13,12 @@ import java.util.Map;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-@RequestMapping(path = "/v1/user")
+@RequestMapping(path = "/v1")
 public interface UserResource {
 
-	@PostMapping(produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
+	@PostMapping(path = "/user",produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
 	void createUser(@RequestBody CreateUserRequest request);
 
-	@GetMapping(produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
+	@PostMapping(path = "/login", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
 	boolean loginUser(@RequestBody LoginRequest request);
 }
