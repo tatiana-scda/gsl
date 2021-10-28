@@ -1,24 +1,28 @@
-# gsl-front
+# Gestão de Serviços de Logística
 
-## Project setup
+Trabalho de Conclusão de Curso
+
+Pós-graduação em Arquitetura de Software Distribuído
+
+Pontifíciia Universidade Catolica de Minas Gerais
+
+## Dependencias
+
+Para rodar o sistema localmente, é necessário antes estar com o sistema do backend rodando. Para saber mais, confira no README do projeto do backend
+
+### Instalar e compilar
+
+No diretorio do projeto do frontend, é necessário instlar o pacote yarn:
+
+```
+npm install --global yarn
+yarn --version
+
+```
+
+Após isso, pode subir o projeto rodando
+
 ```
 yarn install
-```
-
-### Compiles and hot-reloads for development
-```
 yarn run serve
 ```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
