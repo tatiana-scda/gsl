@@ -4,7 +4,7 @@ Trabalho de Conclusão de Curso
 
 Pós-graduação em Arquitetura de Software Distribuído
 
-Pontifíciia Universidade Catolica de Minas Gerais
+Pontifícia Universidade Catolica de Minas Gerais
 
 ## Dependencias
 
