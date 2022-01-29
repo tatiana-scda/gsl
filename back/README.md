@@ -4,7 +4,7 @@ Trabalho de Conclusão de Curso
 
 Pós-graduação em Arquitetura de Software Distribuído
 
-Pontifíciia Universidade Catolica de Minas Gerais
+Pontifícia Universidade Catolica de Minas Gerais
 
 ## Base de Dados
 
@@ -46,8 +46,8 @@ curl -X POST \
 Chamada
 
 ```
-curl -X GET \
-'http://127.0.0.1:8080/gsl-service/v1/user' \
+curl -X POST \
+'http://127.0.0.1:8080/gsl-service/v1/login' \
 -H 'Content-Type: application/json; charset=utf-8' \
 -d '{
 "username": "user",
@@ -57,9 +57,9 @@ curl -X GET \
 
 Resposta
 
-true - login validado
+Sucesso: `200 OK`
 
-false - informacao incorreta
+Falha: `200 NOT FOUND`
 
 ### Rota
 
