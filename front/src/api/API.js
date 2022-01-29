@@ -1,5 +1,5 @@
 export default class API {
-  static #base = 'http://localhost:8080/gsl-service/v1'
+  static #base = 'http://localhost:3000/gsl-service/v1'
 
   static async #fetch(url, method, body = undefined) {
     return new Promise((resolve, reject) => {
@@ -10,7 +10,7 @@ export default class API {
           ...(body !== undefined && { body: JSON.stringify(body) }),
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
         },
       ).then(

@@ -65,10 +65,10 @@ export default {
     infos() {
       return {
         'Código da rota': this.route.id,
-        'Motorista': this.route.driver,
-        'Localização atual': this.route.currentLocation,
-        'Origem': this.route.origin,
-        'Destino': this.route.destination,
+      //  'Motorista': this.route.driver,
+      //  'Localização atual': this.route.currentLocation,
+      //  'Origem': this.route.origin,
+      //  'Destino': this.route.destination,
       }
     },
     statuses() {
