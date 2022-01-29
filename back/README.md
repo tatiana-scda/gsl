@@ -28,7 +28,7 @@ Aqui temos todos os endpoints disponiveis pela aplicação, como testá-los e o 
 
 ### Cadastro
 
-Chamada
+- Chamada
 
 ```
 curl -X POST \
@@ -41,9 +41,15 @@ curl -X POST \
 }'
 ```
 
+- Resposta
+
+```
+201 CREATED
+```
+
 ### Login
 
-Chamada
+- Chamada
 
 ```
 curl -X POST \
@@ -55,15 +61,17 @@ curl -X POST \
 }'
 ```
 
-Resposta
+- Resposta
 
-Sucesso: `200 OK`
+```
+200 OK
 
-Falha: `200 NOT FOUND`
+404 NOT FOUND
+```
 
 ### Rota
 
-Chamada
+- Chamada
 
 ```
   curl -X GET \
@@ -71,7 +79,7 @@ Chamada
   -H 'Content-Type: application/json; charset=utf-8' \'
 ```
 
-Resposta
+- Resposta
 
 ``` 
 {
@@ -86,14 +94,14 @@ Resposta
 
 ### Delivery
 
-Chamada
+- Chamada
 
 ```
 'http://127.0.0.1:8080/gsl-service/v1/delivery/1' \
 -H 'Content-Type: application/json; charset=utf-8'
 ```
 
-Resposta
+- Resposta
 
 ```
 {
